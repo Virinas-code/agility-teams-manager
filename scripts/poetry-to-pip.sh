@@ -1,1 +1,1 @@
-poetry export -f requirements.txt -o requirements.txt --without-hashes --dev -E poetry -q --ansi -n
+poetry export -f requirements.txt -o requirements.txt --without-hashes --dev -E poetry,gunicorn -q --ansi -n
