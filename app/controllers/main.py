@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Remote Exploit.
+Agility Teams Manager.
 
 Main page.
 """

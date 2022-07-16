@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "remote-exploit"
+name = "agility-teams-manager"
 version = "0.1.0"
-description = "A remote exploiting tool."
+description = "Teams ranking for Avallon Cup"
 authors = ["Virinas-code <alexcode228@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 Flask = "^2.1.2"
 coloredlogs = "^15.0.1"
 verboselogs = "^1.7"

@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Remote Exploit.
+Agility Teams Manager.
 
 Home page.
 """
 import os
 
+import verboselogs
+
 from flask import send_from_directory
+
+logger: verboselogs.VerboseLogger = verboselogs.VerboseLogger(__name__)
 
 
 def public(filename):
@@ -16,7 +20,7 @@ def public(filename):
 
     Page /public/<path:filename>
     """
-    bruh()
+    logger.spam("Sending public file %s", filename)
     return send_from_directory(os.path.abspath("./public"), filename)
 
 

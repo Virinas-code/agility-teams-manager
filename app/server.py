@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Remote Exploit.
+Agility Teams Manager.
 
 Main server file.
 """
+import logging
 import os
-from turtle import color
+import sys
 
+import builtins
 import colorama
 import coloredlogs
 from flask import Flask
 import verboselogs
 
-from .controllers.main import main
-from .controllers.list import list
 from .http.static import public, ui
+
+sys.path.append(os.getcwd())
 
 colorama.init(autoreset=True)
 
@@ -38,7 +40,7 @@ server.template_folder = os.path.abspath("app/views")
 server.add_url_rule("/public/<path:filename>", view_func=public)
 server.add_url_rule("/ui/<path:filename>", view_func=ui)
 
-server.add_url_rule("/list", view_func=list)
-
 if __name__ == "__main__":
+    print("Nevre goonna")
+    logging.warning(print)
     server.run(host="0.0.0.0", port=8080, debug=True)
