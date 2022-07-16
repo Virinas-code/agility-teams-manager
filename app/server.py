@@ -41,6 +41,5 @@ server.add_url_rule("/public/<path:filename>", view_func=public)
 server.add_url_rule("/ui/<path:filename>", view_func=ui)
 
 if __name__ == "__main__":
-    print("Nevre goonna")
-    logging.warning(print)
+    print("Ca marche pas")
     server.run(host="0.0.0.0", port=8080, debug=True)

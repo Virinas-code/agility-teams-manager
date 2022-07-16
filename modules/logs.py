@@ -5,9 +5,13 @@ Agility Teams Manager.
 
 Advanced logging.
 """
-import logging
 import sys
 from typing import Optional, TextIO
+
+from verboselogs import SPAM, VerboseLogger
+
+logger: VerboseLogger = VerboseLogger("print")
+logger.setLevel(SPAM)
 
 
 def custom_print(
@@ -31,10 +35,9 @@ def custom_print(
     string: str = separator.join(str(value) for value in values)
     full_string: str = string + end_character
     if file == sys.stdout:
-        logging.warning("custom")
-        logging.debug(string)
+        logger.debug(string)
     elif file == sys.stderr:
-        logging.error(string)
+        logger.error(string)
     else:
         file.write(full_string)
         if flush:
