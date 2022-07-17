@@ -31,3 +31,12 @@ def ui(filename):
     Page /ui/<path:filename>
     """
     return send_from_directory(os.path.abspath("./ui"), filename)
+
+
+def data(filename):
+    """
+    Send a data file.
+
+    Page /data/<path:filename>
+    """
+    return send_from_directory(os.path.abspath("./data"), filename)
