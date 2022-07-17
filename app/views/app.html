@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>Agility Teams Manager - App</title>
+   <meta charset="utf-8" />
+   <link rel="stylesheet" href="/ui/app/style.css" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body>
+   <div id="sidebar">
+    <header>
+     <img src="/public/avallon.webp" />
+     <h1>Agility Teams Manager</h1>
+     <h2>Avallon Cup</h2>
+    </header>
+    <nav>
+     <div id="teamlist">
+      {% for team in teams %}
+       <a href="#{{ team[0] }}">
+        <p>{{ team[0] }}</p>
+       </a>
+      {% endfor %}
+     </div>
+     <a href="#myteam">
+      <span class="material-symbols-outlined">group</span>
+      <p>Mes équipes / My teams</p>
+     </a>
+     <a href="new-team">
+      <span class="material-symbols-outlined">add</span>
+      <p>Nouvelle équipe / New team</p>
+     </a>
+     <a href="/">
+      <span class="material-symbols-outlined">logout</span>
+      <p>Changer d'utilisateur / User change</p>
+     </a>
+    </nav>
+   </div>
+   <main>
+    <article id="myteam">
+     <p>{% for message in get_flashed_messages() %}{{ message }}{% endfor %}</p>
+     <!--<p>Vous n'avez créé aucune équipes / You did not create any team</p>-->
+    </article>
+    {% for team in teams %}
+     <article id="{{ team [0] }}">
+      <header>
+       <div class="title">
+        <h4>{{ team[0] }}</h4>
+        <h5>{{ team[2]|length + 1 }} concurrents / competitors</h5>
+       </div>
+       <div class="button">
+        {% if dog_available == True %}
+         <a href="{{ team[0] }}">
+          <span class="material-symbols-outlined">group_add</span>
+          <span>Rejoindre / Join</span>
+         </a>
+        {% else %}
+         <p>Vous avez déja rejoint une équipe ! / You already joined a team!</p>
+        {% endif %}
+       </div>
+      </header>
+      <div class="teamview">
+       <div class="public">
+        <ul class="members">
+         <li>
+          <span>{{ team[1][1] }}</span>
+          <span>{{ team[1][0] }}</span>
+         </li>
+         {% for member in team[2] %}
+          <li>
+           <span>{{ member[1] }}</span>
+           <span>{{ member[0] }}</span>
+          </li>
+         {% endfor %}
+        </ul>
+       </div>
+       {% if team[1][1] == myname %}
+        <!--<div class="private">
+         <h4>Gestion de l'équipe</h4>
+         <a href="{{ team[0] }}/invite"><span class="material-symbols-outlined">group_add</span>Inviter des gens</a>
+         <a href="{{ team[0] }}/remove"><span class="material-symbols-outlined">remove</span>Supprimmer l'équipe</a>
+        </div>-->
+       {% endif %}
+      </div>
+     </article>
+    {% endfor %}
+   </main>
+  </body>
+ </html>
+<!-- END -->

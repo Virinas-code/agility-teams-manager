@@ -6,6 +6,7 @@ Agility Teams Manager.
 Advanced logging.
 """
 import sys
+
 from typing import Optional, TextIO
 
 from verboselogs import SPAM, VerboseLogger

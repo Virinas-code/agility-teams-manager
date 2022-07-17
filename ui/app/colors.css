@@ -1,0 +1,52 @@
+#sidebar {
+    background-color: gray;
+}
+
+* {
+    color: white;
+}
+
+header {
+    border-bottom: 1px solid lightgray;
+}
+
+header h2 {
+    color: lightgray;
+}
+
+nav a:hover {
+    border-left: 5px solid lightgray;
+    padding-left: 5px;
+}
+
+nav > a:first-of-type {
+    border-top: 1px solid lightgray;
+}
+
+main {
+    background-color: dimgray;
+}
+
+.teamview .public li {
+    border-bottom: 1px solid darkgray;
+}
+
+li span:last-of-type {
+    color: lightgray;
+}
+
+.public {
+    border-right: 1px solid lightgray;
+}
+
+.private a {
+    border-top: 1px solid lightgray;
+}
+
+.private a:last-of-type {
+    border-bottom: 1px solid lightgray;
+}
+
+.private a:hover {
+    background-color: lightgray;
+}

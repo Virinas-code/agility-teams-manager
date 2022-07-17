@@ -2,5 +2,9 @@
     "python.linting.pylintArgs": [
         "--init-hook",
         "import sys; sys.path.append('${workspaceFolder}/app')"
-    ]
+    ],
+    "[html]": {
+        "editor.formatOnSave": false,
+        "editor.tabSize": 1
+    }
 }

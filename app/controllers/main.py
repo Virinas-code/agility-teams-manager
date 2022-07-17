@@ -5,7 +5,10 @@ Agility Teams Manager.
 
 Main page.
 """
+import random
 from flask import render_template
+
+import modules.shared
 
 
 def main():
@@ -14,4 +17,7 @@ def main():
 
     Page /.
     """
-    return render_template("main.html")
+    return render_template(
+        "select.html",
+        concurrents=modules.shared.concurrents,
+    )
