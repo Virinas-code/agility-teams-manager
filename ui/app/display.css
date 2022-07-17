@@ -111,7 +111,8 @@ article > header > .button > a {
 ul {
     list-style-type: none;
     padding: 0px;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     flex-grow: 1;
     margin: 0px;
 }
