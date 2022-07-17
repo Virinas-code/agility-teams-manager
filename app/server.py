@@ -17,7 +17,7 @@ from .controllers.app import app
 from .controllers.join_team import join_team, join_team_with_dog
 from .controllers.main import main
 from .controllers.new_team import create_team, new_team
-from .http.static import public, ui
+from .http.static import data, public, ui
 
 sys.path.append(os.getcwd())
 
@@ -42,6 +42,7 @@ server.secret_key = b"wG\xdf_:VTD\xc5o&\xf4~\xa3\x0e\xd4\x81\xc4\xa1*\xa3\x1f\xb
 # HTTP Static
 server.add_url_rule("/public/<path:filename>", view_func=public)
 server.add_url_rule("/ui/<path:filename>", view_func=ui)
+server.add_url_rule("/data/<path:filename>", view_func=data)
 
 # Root
 server.add_url_rule("/", view_func=main)
