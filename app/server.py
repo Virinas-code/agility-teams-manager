@@ -42,7 +42,9 @@ server.secret_key = b"wG\xdf_:VTD\xc5o&\xf4~\xa3\x0e\xd4\x81\xc4\xa1*\xa3\x1f\xb
 # HTTP Static
 server.add_url_rule("/public/<path:filename>", view_func=public)
 server.add_url_rule("/ui/<path:filename>", view_func=ui)
-server.add_url_rule("/data/<path:filename>", view_func=data)
+server.add_url_rule(
+    "/data/storage/fakepath/help/<path:filename>", view_func=data
+)
 
 # Root
 server.add_url_rule("/", view_func=main)
