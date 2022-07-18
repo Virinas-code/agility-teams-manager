@@ -1,0 +1,9 @@
+{% extends "templates/small.html" %}
+{% block main %}
+<h2>Sélectionnez votre nom / Select your name</h2>
+<ul>
+ {% for concurrent in concurrents.unique_concurrents %}
+  <li><a href="{{ concurrent[0] }}/">{{ concurrent[0] }}</a></li>
+ {% endfor %}
+</ul>
+{% endblock %}
