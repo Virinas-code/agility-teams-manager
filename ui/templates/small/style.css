@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
 html {
     background-color: dimgray;
 }
@@ -25,7 +31,8 @@ h2 {
 ul {
     list-style-type: none;
     padding: 0px;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     flex-grow: 1;
     margin: 0px;
 }
