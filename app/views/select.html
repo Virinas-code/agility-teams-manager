@@ -1,5 +1,9 @@
 {% extends "templates/small.html" %}
 {% block main %}
-<h2>Erreur interne du serveur / Internal Server Error</h2>
-<ul><li>Nous travaillons dès que possible à la résolution de ce problème / We are working on this bug.</li></ul>
+<h2>Sélectionnez votre nom / Select your name</h2>
+<ul>
+ {% for concurrent in concurrents.unique_concurrents %}
+  <li><a href="{{ concurrent[0] }}/">{{ concurrent[0] }}</a></li>
+ {% endfor %}
+</ul>
 {% endblock %}
