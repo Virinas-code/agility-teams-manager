@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>Agility Teams Manager - Interface administrateur</title>
+   <meta charset="utf-8" />
+   <link rel="stylesheet" href="/ui/admin/style.css" />
+  </head>
+  <body>
+   <header>
+    <div>
+     <img src="/public/avallon.webp" />
+    </div>
+    <div>
+     <h1>Agility Teams Manager</h1>
+     <h2>Interface administrateur</h2>
+    </div>
+   </header>
+   <main>
+    <div>
+     <form action="results" method="POST">
+      <h3>Importer les résultats</h3>
+      <input type="text" placeholder="ID du concours" id="competition_id" name="competition_id" />
+      <input type="text" placeholder="ID de l'épreuve" id="epreuve"  name="epreuve" />
+      <select name="day" id="day">
+       <option value="">Jour de compétition</option>
+       <option value="1">Jeudi</option>
+       <option value="2">Vendredi</option>
+       <option value="3">Samedi</option>
+       <option value="4">Dimanche</option>
+      </select>
+      <input type="file" placeholder="Fichier des résultats" id="file" name="file" />
+      <h3>Ajouter un résultat d'une autre classe</h3>
+      <input type="text" placeholder="Nom du concurrent" id="name" name="name" />
+      <div>
+       <input type="number" placeholder="Temps" id="time" name="time" />
+       <input type="number" placeholder="Pénalités" id="penalities" name="penalities" />
+      </div>
+      <input type="submit" value="Ajouter les résultats" />
+     </form>
+    </div>
+    <div>
+     <h3>Prévisualisaton du classement</h3>
+    </div>
+   </main>
+  </body>
+ </html>
+<!-- END -->

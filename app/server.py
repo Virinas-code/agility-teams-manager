@@ -5,6 +5,7 @@ Agility Teams Manager.
 
 Main server file.
 """
+import logging
 import os
 import sys
 
@@ -13,6 +14,8 @@ import coloredlogs
 from flask import Flask
 import verboselogs
 
+from .controllers.admin import admin
+from .controllers.admin.results import admin_results
 from .controllers.app import app
 from .controllers.join_team import join_team, join_team_with_dog
 from .controllers.main import main
@@ -22,7 +25,7 @@ from .http.static import data, public, ui
 sys.path.append(os.getcwd())
 
 colorama.init(autoreset=True)
-"""coloredlogs.install(
+coloredlogs.install(
     verboselogs.SPAM,
     fmt=colorama.Fore.MAGENTA
     + "%(processName)s#%(threadName)s"
@@ -30,7 +33,12 @@ colorama.init(autoreset=True)
     + " At %(pathname)s:%(lineno)d, in %(funcName)s\n"
     + colorama.Style.RESET_ALL
     + "[  %(name)s  ] %(asctime)s: %(levelname)s %(message)s",
-)"""  # Not working on server
+)  # Not working on server
+
+loggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]
+for logger in loggers:
+    logger.setLevel(1)
+
 
 server: Flask = Flask(__name__)
 """The main Flask server."""
@@ -47,6 +55,12 @@ server.add_url_rule(
 
 # Root
 server.add_url_rule("/", view_func=main)
+
+# Admin
+server.add_url_rule("/admin/", view_func=admin)
+server.add_url_rule(
+    "/admin/results", view_func=admin_results, methods=["POST"]
+)
 
 # App
 server.add_url_rule("/<string:name>/", methods=["GET", "POST"], view_func=app)

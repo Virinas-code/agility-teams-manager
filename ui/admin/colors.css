@@ -1,0 +1,33 @@
+body {
+    background-color: dimgray;
+}
+
+header {
+    background-color: gray;
+}
+
+h1, h3 {
+    color: white;
+}
+
+h2 {
+    color: lightgray;
+}
+
+main > div:first-of-type {
+    border-right: 1px solid lightgray;
+}
+
+form input, form select {    
+    background-color: dimgray;
+    border: 1px solid lightgray;
+    color: white;
+}
+
+form input:hover, form input:focus:hover, form select:hover, form select:focus:hover {
+    background-color: gray;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+}

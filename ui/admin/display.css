@@ -1,0 +1,71 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    height: 70px;
+    gap: 10px;
+}
+
+header > div:last-of-type {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header img {
+    height: 60px;
+    padding: 5px;
+}
+
+header h1, header h2 {
+    margin: 0px;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+main > div {
+    flex: 1 1 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin: 5px;
+}
+
+form input, form select {
+    margin: 5px;
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+}
+
+form input[type="submit"], form select {
+    cursor: pointer;
+}
+
+form > div {
+    display: flex;
+}
+
+form > div > input {
+    flex: 1 1 0px;
+}

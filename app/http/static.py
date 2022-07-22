@@ -30,6 +30,7 @@ def ui(filename):
 
     Page /ui/<path:filename>
     """
+    logger.spam("Sending UI file %s", filename)
     return send_from_directory(os.path.abspath("./ui"), filename)
 
 
