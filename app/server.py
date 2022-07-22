@@ -62,7 +62,7 @@ server.add_url_rule("/<string:name>/", methods=["GET", "POST"], view_func=app)
 # Admin
 server.add_url_rule("/admin/", view_func=admin)
 server.add_url_rule(
-    "/admin/results", view_func=admin_results, methods=["GET", "POST"]
+    "/admin/views/results", view_func=admin_results, methods=["GET", "POST"]
 )
 
 # New team
