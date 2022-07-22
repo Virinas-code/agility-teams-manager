@@ -59,7 +59,7 @@ server.add_url_rule("/", view_func=main)
 # Admin
 server.add_url_rule("/admin/", view_func=admin)
 server.add_url_rule(
-    "/admin/results", view_func=admin_results, methods=["POST"]
+    "/admin/results", view_func=admin_results, methods=["GET", "POST"]
 )
 
 # App

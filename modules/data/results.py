@@ -115,4 +115,5 @@ class ResultsManager:
         for team in modules.shared.teams.teams:
             team_points: int = self.team_results(team)
             teams_ranking.append((team[0], team[1], team[2], team_points))
+        teams_ranking.sort(key=lambda elem: elem[3], reverse=True)
         return teams_ranking

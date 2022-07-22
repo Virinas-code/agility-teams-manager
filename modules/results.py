@@ -31,6 +31,7 @@ class ResultsParse:
         :param int age: Class.
         :return str: Page source.
         """
+        time.sleep(15)
         try:
             return self._request(id_competition, epreuve, category, age)
         except Exception:
