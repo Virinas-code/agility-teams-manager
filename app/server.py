@@ -56,14 +56,14 @@ server.add_url_rule(
 # Root
 server.add_url_rule("/", view_func=main)
 
+# App
+server.add_url_rule("/<string:name>/", methods=["GET", "POST"], view_func=app)
+
 # Admin
 server.add_url_rule("/admin/", view_func=admin)
 server.add_url_rule(
     "/admin/results", view_func=admin_results, methods=["GET", "POST"]
 )
-
-# App
-server.add_url_rule("/<string:name>/", methods=["GET", "POST"], view_func=app)
 
 # New team
 server.add_url_rule("/<string:name>/new-team/", view_func=new_team)
