@@ -86,7 +86,6 @@ class ResultsManager:
         """
         team_members: list[tuple[str, str, str]] = [team[1]]
         team_members.extend(team[2])
-        print(f"{team[0]=} / {team_members=}")
         team_points: int = 0
         for member in team_members:
             if member in self.results.keys():

@@ -108,8 +108,10 @@ class ResultsParse:
             if rank == "-":
                 points[name] = 0
             else:
-                points[name] = int(
-                    1000 * 10 ** (-3 * ((int(rank) - 1) / (var_n - 1)))
-                )
-        print(f"{points=}")
+                if var_n > 1:
+                    points[name] = int(
+                        1000 * 10 ** (-3 * ((int(rank) - 1) / (var_n - 1)))
+                    )
+                else:
+                    points[name] = 1000
         return points
