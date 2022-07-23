@@ -44,8 +44,6 @@ def admin_results():
                 results, int(request.form["day"])
             )
     ranks = modules.subshared.results.teams_ranking()
-    print(modules.subshared.results.results)
-    print(ranks)
     return render_template(
         "admin/view-results.html",
         ranked_teams=ranks,

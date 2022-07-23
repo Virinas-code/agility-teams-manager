@@ -5,6 +5,7 @@ Agility Teams Manager.
 
 Concurrents list load.
 """
+from __future__ import annotations
 import pickle
 
 

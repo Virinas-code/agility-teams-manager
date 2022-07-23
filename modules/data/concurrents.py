@@ -5,6 +5,7 @@ Agility Teams Manager.
 
 Concurrents data manager.
 """
+from __future__ import annotations
 import pickle
 
 

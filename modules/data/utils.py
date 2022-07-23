@@ -8,6 +8,7 @@ Utils data functions.
 DO NOT IMPORT IN modules.shared !!!
 IMPORT THIS AFTER LOADING modules.shared !!!
 """
+from __future__ import annotations
 import modules.shared  # WARNING!
 
 

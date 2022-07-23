@@ -5,6 +5,7 @@ Agility Teams Manager.
 
 Teams data manager.
 """
+from __future__ import annotations
 import pickle
 
 

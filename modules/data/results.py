@@ -5,6 +5,7 @@ Agility Teams Manager.
 
 Results data manager.
 """
+from __future__ import annotations
 import pickle
 
 import modules.shared
@@ -52,7 +53,6 @@ class ResultsManager:
             Map between concurrent and points.
         :param int day: Day of the results.
         """
-        print(f"{results=}")
         for concurrent, points in results.items():
             self.add_results(concurrent, points, day)
         self.save()
@@ -67,11 +67,16 @@ class ResultsManager:
         :param int points: Points added to concurrent.
         :param int day: Competition day (1 - 4).
         """
-        if concurrent not in self.results:
-            self.results[concurrent] = {}
-        if day not in self.results[concurrent]:
-            self.results[concurrent][day] = 0
-        self.results[concurrent][day] += points
+        title_concurrent: tuple[str, str, str] = (
+            concurrent[0].title(),
+            concurrent[1].title(),
+            concurrent[2],
+        )
+        if title_concurrent not in self.results:
+            self.results[title_concurrent] = {}
+        if day not in self.results[title_concurrent]:
+            self.results[title_concurrent][day] = 0
+        self.results[title_concurrent][day] += points
         self.save()
 
     def team_results(
@@ -84,18 +89,24 @@ class ResultsManager:
         :param tuple[str, tuple[str, str, str], list[tuple[str, str, str]]] team: _description_
         :return int: _description_
         """
-        team_members: list[tuple[str, str, str]] = [team[1]]
-        team_members.extend(team[2])
+        team_members: list[tuple[str, str, str]] = [
+            (team[1][0].title(), team[1][1].title(), team[1][2])
+        ]
+        for sub_member in team[2]:
+            team_members.append(
+                (sub_member[0].title(), sub_member[1].title(), sub_member[2])
+            )
         team_points: int = 0
         for member in team_members:
             if member in self.results.keys():
-                print(f"{self.results[member]=}\n{member=}")
                 max_points: int = 0
                 for points in self.results[member].values():
                     if points > max_points:
                         max_points = points
-                print(f"{max_points=}")
                 team_points += max_points
+            else:
+                # print(f"{member=}")
+                """"""
         return team_points
 
     def teams_ranking(

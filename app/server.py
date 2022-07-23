@@ -25,7 +25,7 @@ from .http.static import data, public, ui
 sys.path.append(os.getcwd())
 
 colorama.init(autoreset=True)
-"""coloredlogs.install(
+coloredlogs.install(
     verboselogs.SPAM,
     fmt=colorama.Fore.MAGENTA
     + "%(processName)s#%(threadName)s"
@@ -33,7 +33,7 @@ colorama.init(autoreset=True)
     + " At %(pathname)s:%(lineno)d, in %(funcName)s\n"
     + colorama.Style.RESET_ALL
     + "[  %(name)s  ] %(asctime)s: %(levelname)s %(message)s",
-)"""  # Not working on server
+)  # Not working on server
 
 loggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]
 for logger in loggers:
@@ -80,5 +80,4 @@ server.add_url_rule(
 )
 
 if __name__ == "__main__":
-    print("Ca marche pas")
     server.run(host="0.0.0.0", port=8080, debug=True)
