@@ -22,4 +22,4 @@ print("Custom print loaded")
 
 if __name__ == "__main__":
     logger.info("Loaded shared data %s", modules.shared)
-    server.run(host="0.0.0.0", port=8080, debug=False)
+    server.run(host="0.0.0.0", port=8080, debug=True)
