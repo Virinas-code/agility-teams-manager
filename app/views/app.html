@@ -79,12 +79,11 @@
          {% endfor %}
         </ul>
        </div>
-       {% if team[1][1] == myname %}
-        <!--<div class="private">
+       {% if myname == "Laligant Fabrice" %}
+        <div class="private">
          <h4>Gestion de l'équipe</h4>
-         <a href="{{ team[0] }}/invite"><span class="material-symbols-outlined">group_add</span>Inviter des gens</a>
          <a href="{{ team[0] }}/remove"><span class="material-symbols-outlined">remove</span>Supprimmer l'équipe</a>
-        </div>-->
+        </div>
        {% endif %}
       </div>
      </article>

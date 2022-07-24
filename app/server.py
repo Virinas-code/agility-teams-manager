@@ -16,8 +16,9 @@ import verboselogs
 
 from .controllers.admin import admin
 from .controllers.admin.results import admin_results
+from .controllers.admin.login import admin_login
 from .controllers.app import app
-from .controllers.join_team import join_team, join_team_with_dog
+from .controllers.team_actions import join_team, join_team_with_dog
 from .controllers.main import main
 from .controllers.new_team import create_team, new_team
 from .http.static import data, public, ui
@@ -62,6 +63,9 @@ server.add_url_rule("/<string:name>/", methods=["GET", "POST"], view_func=app)
 
 # Admin
 server.add_url_rule("/admin/", view_func=admin)
+server.add_url_rule(
+    "/admin/login", methods=["GET", "POST"], view_func=admin_login
+)
 server.add_url_rule(
     "/admin/views/results", view_func=admin_results, methods=["GET", "POST"]
 )
